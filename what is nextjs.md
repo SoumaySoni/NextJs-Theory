@@ -11,9 +11,27 @@
 - Adds extra features and optimizations that React alone doesn’t provide.
 
 ### 2. Routing
-- Uses **file-based routing**.
-- Each file in the `pages/` directory becomes a route.
+
+- Next.js supports **two routing systems**:
+  - **Pages Router** (`pages/` directory)
+  - **App Router** (`app/` directory – introduced in Next.js 13+, now recommended)
+
+#### Pages Router
+- Uses **file-based routing** in the `pages/` directory.
+- Each file becomes a route.
   - Example: `pages/about.js` → `/about`
+
+#### App Router (Recommended)
+- Uses the `app/` directory for **React Server Components** and **nested layouts**.
+- Supports advanced routing features:
+  - **Nested routes** with layout and templates
+  - **Dynamic routes**: `app/blog/[slug]/page.tsx` → `/blog/my-article`
+  - **Catch-all routes**: `[...slug]`
+  - **Intercepting routes**: `(.)`, `(..)`, `(...)` syntax
+- Enables **streaming**, **partial rendering**, and **server actions**
+
+> ✅ As of Next.js 15, the **App Router is fully stable** and recommended for new projects.
+
 
 ### 3. Rendering Methods
 - **Static Site Generation (SSG)** – `getStaticProps()`
